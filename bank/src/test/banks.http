@@ -1,0 +1,29 @@
+PUT http://localhost:8080/api/banks/1/accounts
+Content-Type: application/json
+
+{
+  "accountId": 6
+}
+
+###
+
+POST http://localhost:8080/api/banks/1/accounts
+Content-Type: application/json
+
+{
+  "ownerName": "Jack Doe"
+}
+
+###
+POST http://localhost:8080/api/banks
+Content-Type: application/json
+
+{
+  "name": "Erste Bank"
+}
+
+###
+GET http://localhost:8080/api/banks
+Accept: application/json
+
+###

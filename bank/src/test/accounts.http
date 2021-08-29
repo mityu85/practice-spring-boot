@@ -1,0 +1,19 @@
+POST http://localhost:8080/api/accounts
+Content-Type: application/json
+
+{
+  "ownerName": "John Doe"
+}
+
+###
+GET http://localhost:8080/api/accounts
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/accounts/4
+Accept: application/json
+
+###
+
+
