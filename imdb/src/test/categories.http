@@ -1,0 +1,29 @@
+PUT http://localhost:8080/api/categories/1/movies
+Content-Type: application/json
+
+{
+  "movieId": 1
+}
+
+###
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "comedy"
+}
+
+###
+GET http://localhost:8080/api/categories
+Accept: application/json
+
+###
+POST http://localhost:8080/api/categories/1/movies
+Content-Type: application/json
+
+{
+  "title": "Die Hard",
+  "rate": 4
+}
+
+###
