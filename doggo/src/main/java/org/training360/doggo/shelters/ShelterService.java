@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.training360.doggo.NotFoundException;
 import org.training360.doggo.dogs.CreateDogCommand;
 import org.training360.doggo.dogs.Dog;
 import org.training360.doggo.dogs.DogRepository;
@@ -36,7 +37,7 @@ public class ShelterService {
     @Transactional
     public ShelterDTO addNewDogToExistingShelter(Long id, CreateDogCommand command) {
         Shelter shelter = shelterRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("id cannot be found " + id));
+                .orElseThrow(() -> new NotFoundException(id));
         Dog dog = new Dog(
                 command.getName(),
                 command.getDogType(),
@@ -49,9 +50,9 @@ public class ShelterService {
     @Transactional
     public ShelterDTO addExistingDogToExistingShelter(Long id, UpdateWithExistingDogCommand command) {
         Shelter shelter = shelterRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("id cannot be found " + id));
+                .orElseThrow(() -> new NotFoundException(id));
         Dog dog = dogRepository.findById(command.getDogId())
-                .orElseThrow(() -> new IllegalArgumentException("id cannot be found " + id));
+                .orElseThrow(() -> new NotFoundException(id));
         int dogTypeNumber = getDogTypeNumber(shelter, dog);
         if (dog.dogHasNoShelter() && dogTypeNumber < 2) {
             shelter.addDog(dog);
