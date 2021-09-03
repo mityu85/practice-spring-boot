@@ -1,0 +1,22 @@
+POST http://localhost:8080/api/dogs
+Content-Type: application/json
+
+{
+  "name": "Kormos",
+  "dogType": "ROTTWEILER",
+  "age": 2
+}
+
+###
+GET http://localhost:8080/api/dogs
+Accept: application/json
+
+###
+GET http://localhost:8080/api/dogs/breed?dogType=ROTTWEILER
+Accept: application/json
+
+###
+DELETE http://localhost:8080/api/dogs/2
+Accept: application/json
+
+###

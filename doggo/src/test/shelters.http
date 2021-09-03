@@ -1,0 +1,29 @@
+PUT http://localhost:8080/api/shelters/2/dogs
+Content-Type: application/json
+
+{
+  "dogId": 3
+}
+
+###
+POST http://localhost:8080/api/shelters/1/dogs
+Content-Type: application/json
+
+{
+  "name": "Buksi",
+  "dogType": "GERMAN_SHEPARD",
+  "age": 1
+}
+
+###
+POST http://localhost:8080/api/shelters
+Content-Type: application/json
+
+{
+  "name": "Dog City"
+}
+
+###
+GET http://localhost:8080/api/shelters
+
+###
