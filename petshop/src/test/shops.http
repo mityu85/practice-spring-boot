@@ -1,0 +1,31 @@
+POST http://localhost:8080/api/shops
+Content-Type: application/json
+
+{
+  "name": "Favorite"
+}
+
+###
+GET http://localhost:8080/api/shops
+Accept: application/json
+
+###
+GET http://localhost:8080/api/shops?name=Unicorn
+Accept: application/json
+
+###
+POST http://localhost:8080/api/shops/1/pets
+Content-Type: application/json
+
+{
+  "name": "Csili",
+  "species": "PARROT",
+  "age": 1
+}
+###
+PUT http://localhost:8080/api/shops/2/pets
+Content-Type: application/json
+
+{
+  "petId": 3
+}

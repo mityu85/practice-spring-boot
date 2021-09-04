@@ -1,0 +1,22 @@
+POST http://localhost:8080/api/pets
+Content-Type: application/json
+
+{
+  "name": "Füli",
+  "species": "CAT",
+  "age": 1
+}
+
+###
+GET http://localhost:8080/api/pets
+Accept: application/json
+
+###
+GET http://localhost:8080/api/pets?name=Bodri
+Accept: application/json
+
+###
+DELETE http://localhost:8080/api/pets/2
+Accept: application/json
+
+###
